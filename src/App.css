@@ -1,38 +1,70 @@
 .App {
-  text-align: center;
+  max-width: 660px;
+  margin: 40px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background: none;
+  border: 2px solid #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button:hover {
+  background: #c23866;
+  color: #fff;
+}
+.card-grid{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.card{
+  position: relative;
+}
+.card img{
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+.card .front{
+  transform: rotateY(90deg);
+  position: absolute;
+  transition: all ease-in .2s;
+}
+.flipped .front{
+  transform: rotateY(0deg);
+  transition-delay: .2s;
+}
+.card .back{
+  transition: all ease-in .2s;
+  transition-delay: .2s;
+}
+.flipped .back{
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+@media screen and (max-width:650px) {
+  .App{
+    max-width: 500px;
   }
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:550px) {
+  .App{
+    max-width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+  
+}
+@media screen and (max-width:400px) {
+  .App{
+    max-width: 350px;
   }
+  
 }
